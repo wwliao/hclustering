@@ -1,6 +1,6 @@
 # hclustering
 **hclustering** is a Python script plotting the result of hierarchical
-clustering combined with dendrogram and head map.
+clustering with dendrogram and heat map.
 
 ## Dependencies
 It needs Python 2.7 and the packages listed below:
@@ -28,7 +28,7 @@ Please see the command-line help:
 
 ## Demo time!
 
-    $ python hclustering.py --method complete --metric=correlation --threshold=0.49 data.txt
+    $ python hclustering.py --method complete --metric correlation --threshold 0.49 data.txt
 
 The output figure:
 ![](https://raw.githubusercontent.com/wwliao/hclustering/master/data_complete_correlation_hcluster.png)
