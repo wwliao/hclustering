@@ -30,5 +30,8 @@ Please see the command-line help:
 
     $ python hclustering.py --method complete --metric=correlation --threshold=0.49 data.txt
 
+The output figure:
+![](https://raw.githubusercontent.com/wwliao/hclustering/master/data_complete_correlation_hcluster.png)
+
 ## License
 MIT License
