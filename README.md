@@ -13,18 +13,18 @@ It needs Python 2.7 and the packages listed below:
 Please see the command-line help:
 
     $ python hclustering.py -h
-    usage: hclustering.py [-h] [--method METHOD] [--metric METRIC]
-                          [--threshold THRESHOLD]
+    usage: hclustering.py [-h] [--method STR] [--metric STR] [--threshold FLOAT]
                           data
 
     positional arguments:
-      data
+      data               input data
 
     optional arguments:
-      -h, --help            show this help message and exit
-      --method METHOD
-      --metric METRIC
-      --threshold THRESHOLD
+      -h, --help         show this help message and exit
+      --method STR       the linkage algorithm to use
+      --metric STR       the distance metric to use
+      --threshold FLOAT  color all the descendent links below a cluster node k the
+                         same color if k is the first node below the threshold
 
 ## Demo time!
 

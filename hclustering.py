@@ -8,10 +8,15 @@ import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
 
 parser = argparse.ArgumentParser()
-parser.add_argument('data')
-parser.add_argument('--method', default='single')
-parser.add_argument('--metric', default='euclidean')
-parser.add_argument('--threshold', type=float)
+parser.add_argument('data', help='input data')
+parser.add_argument('--method', metavar='STR', default='single',
+                    help='the linkage algorithm to use')
+parser.add_argument('--metric', metavar='STR', default='euclidean',
+                    help='the distance metric to use')
+parser.add_argument('--threshold', metavar='FLOAT', type=float,
+                    help='color all the descendent links below a cluster '
+                    'node k the same color if k is the first node below the '
+                    'threshold')
 args = parser.parse_args()
 
 data = pd.read_table(args.data, index_col=0)
@@ -34,7 +39,7 @@ ax1.set_xticklabels(np.arange(0.2, 1.4, 0.2), weight='bold')
 ax1.set_xlabel('Distance', fontsize='x-small', weight='bold')
 ax1.tick_params(labelsize='x-small', bottom='off', left='off', right='off', direction='out', width=1, pad=5)
 
-# rearrange data according the clustering results
+# rearrange data according to the clustering result
 data = data.ix[dendro['ivl']]
 
 # ax2 for heat map
